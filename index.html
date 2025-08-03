@@ -1,0 +1,205 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2709
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red70\green137\blue204;\red23\green24\blue24;\red140\green211\blue254;
+\red202\green202\blue202;\red109\green109\blue109;\red194\green126\blue101;\red109\green115\blue120;}
+{\*\expandedcolortbl;;\cssrgb\c33725\c61176\c83922;\cssrgb\c11765\c12157\c12549;\cssrgb\c61176\c86275\c99608;
+\cssrgb\c83137\c83137\c83137;\cssrgb\c50196\c50196\c50196;\cssrgb\c80784\c56863\c47059;\cssrgb\c50196\c52549\c54510;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2  <!DOCTYPE\cf4 \strokec4  html\cf2 \strokec2 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 <\cf2 \strokec2 html\cf5 \strokec5  \cf4 \strokec4 lang\cf6 \strokec6 =\cf7 \strokec7 "es"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cf6 \cb3 \strokec6 <\cf2 \strokec2 head\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf6 \strokec6 <\cf2 \strokec2 meta\cf5 \strokec5  \cf4 \strokec4 charset\cf6 \strokec6 =\cf7 \strokec7 "UTF-8"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 meta\cf5 \strokec5  \cf4 \strokec4 name\cf6 \strokec6 =\cf7 \strokec7 "viewport"\cf5 \strokec5  \cf4 \strokec4 content\cf6 \strokec6 =\cf7 \strokec7 "width=device-width, initial-scale=1.0"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 title\cf6 \strokec6 >\cf5 \strokec5 Mi Inventario Financiero\cf6 \strokec6 </\cf2 \strokec2 title\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf8 \strokec8 <!-- Enlace a Tailwind CSS para el estilo -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 script\cf5 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 "https://cdn.tailwindcss.com"\cf6 \strokec6 ></\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf8 \strokec8 <!-- Enlaces a React y ReactDOM para ejecutar la aplicaci\'f3n -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 script\cf5 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 "https://unpkg.com/react@18/umd/react.production.min.js"\cf6 \strokec6 ></\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 script\cf5 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 "https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"\cf6 \strokec6 ></\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 script\cf5 \strokec5  \cf4 \strokec4 src\cf6 \strokec6 =\cf7 \strokec7 "https://unpkg.com/@babel/standalone/babel.min.js"\cf6 \strokec6 ></\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 </\cf2 \strokec2 head\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cf6 \cb3 \strokec6 <\cf2 \strokec2 body\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3   \cf8 \strokec8 <!-- Aqu\'ed es donde se mostrar\'e1 la aplicaci\'f3n -->\cf5 \cb1 \strokec5 \
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 div\cf5 \strokec5  \cf4 \strokec4 id\cf6 \strokec6 =\cf7 \strokec7 "root"\cf6 \strokec6 ></\cf2 \strokec2 div\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+\cb3   \cf6 \strokec6 <\cf2 \strokec2 script\cf5 \strokec5  \cf4 \strokec4 type\cf6 \strokec6 =\cf7 \strokec7 "text/babel"\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cb3     const \{ useState, useEffect \} = React;\cb1 \
+\
+\cb3     const App = () => \{\cb1 \
+\cb3       const [ingresos, setIngresos] = useState(\{\cb1 \
+\cb3         salario: '',\cb1 \
+\cb3         ingresosExtra: '',\cb1 \
+\cb3         inversiones: '',\cb1 \
+\cb3       \});\cb1 \
+\
+\cb3       const [gastos, setGastos] = useState(\{\cb1 \
+\cb3         alquiler: '',\cb1 \
+\cb3         servicios: '',\cb1 \
+\cb3         comida: '',\cb1 \
+\cb3         transporte: '',\cb1 \
+\cb3         seguros: '',\cb1 \
+\cb3         deudas: '',\cb1 \
+\cb3         salidas: '',\cb1 \
+\cb3         hobbies: '',\cb1 \
+\cb3         entretenimiento: '',\cb1 \
+\cb3         comprasOnline: '',\cb1 \
+\cb3         ahorroEmergencia: '',\cb1 \
+\cb3         aportesInversiones: '',\cb1 \
+\cb3         otrosAhorros: '',\cb1 \
+\cb3       \});\cb1 \
+\
+\cb3       const [totalIngresos, setTotalIngresos] = useState(0);\cb1 \
+\cb3       const [totalGastos, setTotalGastos] = useState(0);\cb1 \
+\cb3       const [diferencia, setDiferencia] = useState(0);\cb1 \
+\
+\cb3       // Usa useEffect para calcular los totales cada vez que los ingresos o gastos cambian\cb1 \
+\cb3       useEffect(() => \{\cb1 \
+\cb3         const sumIngresos = Object.values(ingresos).reduce((acc, current) => acc + (parseFloat(current) || 0), 0);\cb1 \
+\cb3         setTotalIngresos(sumIngresos);\cb1 \
+\cb3       \}, [ingresos]);\cb1 \
+\
+\cb3       useEffect(() => \{\cb1 \
+\cb3         const sumGastos = Object.values(gastos).reduce((acc, current) => acc + (parseFloat(current) || 0), 0);\cb1 \
+\cb3         setTotalGastos(sumGastos);\cb1 \
+\cb3       \}, [gastos]);\cb1 \
+\
+\cb3       // Calcula la diferencia entre ingresos y gastos\cb1 \
+\cb3       useEffect(() => \{\cb1 \
+\cb3         setDiferencia(totalIngresos - totalGastos);\cb1 \
+\cb3       \}, [totalIngresos, totalGastos]);\cb1 \
+\
+\cb3       // Maneja el cambio en los campos de ingresos\cb1 \
+\cb3       const handleIngresosChange = (e) => \{\cb1 \
+\cb3         const \{ name, value \} = e.target;\cb1 \
+\cb3         setIngresos(prevIngresos => (\{\cb1 \
+\cb3           ...prevIngresos,\cb1 \
+\cb3           [name]: value,\cb1 \
+\cb3         \}));\cb1 \
+\cb3       \};\cb1 \
+\
+\cb3       // Maneja el cambio en los campos de gastos\cb1 \
+\cb3       const handleGastosChange = (e) => \{\cb1 \
+\cb3         const \{ name, value \} = e.target;\cb1 \
+\cb3         setGastos(prevGastos => (\{\cb1 \
+\cb3           ...prevGastos,\cb1 \
+\cb3           [name]: value,\cb1 \
+\cb3         \}));\cb1 \
+\cb3       \};\cb1 \
+\
+\cb3       const getDiferenciaClass = () => \{\cb1 \
+\cb3         if (diferencia > 0) \{\cb1 \
+\cb3           return 'text-green-600';\cb1 \
+\cb3         \} else if (diferencia < 0) \{\cb1 \
+\cb3           return 'text-red-600';\cb1 \
+\cb3         \}\cb1 \
+\cb3         return '';\cb1 \
+\cb3       \};\cb1 \
+\
+\cb3       const InputField = (\{ label, name, value, onChange \}) => (\cb1 \
+\cb3         <div className="flex justify-between items-center py-2 border-b border-gray-200 last:border-b-0">\cb1 \
+\cb3           <label htmlFor=\{name\} className="text-gray-700">\{label\}</label>\cb1 \
+\cb3           <input\cb1 \
+\cb3             type="number"\cb1 \
+\cb3             id=\{name\}\cb1 \
+\cb3             name=\{name\}\cb1 \
+\cb3             value=\{value\}\cb1 \
+\cb3             onChange=\{onChange\}\cb1 \
+\cb3             placeholder="0.00"\cb1 \
+\cb3             className="w-1/3 text-right border rounded-md px-2 py-1 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-200"\cb1 \
+\cb3           />\cb1 \
+\cb3         </div>\cb1 \
+\cb3       );\cb1 \
+\
+\cb3       const SectionTitle = (\{ title \}) => (\cb1 \
+\cb3         <h3 className="text-lg font-semibold text-gray-800 mt-6 mb-2">\{title\}</h3>\cb1 \
+\cb3       );\cb1 \
+\
+\cb3       return (\cb1 \
+\cb3         <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 sm:p-6 lg:p-8">\cb1 \
+\cb3           <div className="bg-white shadow-xl rounded-2xl p-6 sm:p-8 lg:p-10 max-w-4xl w-full">\cb1 \
+\cb3             <h1 className="text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-6">Plantilla de Inventario Financiero</h1>\cb1 \
+\cb3             <p className="text-center text-gray-600 mb-8">Esta plantilla interactiva te ayudar\'e1 a visualizar tus finanzas.</p>\cb1 \
+\
+\cb3             \{/* Secci\'f3n de Ingresos */\}\cb1 \
+\cb3             <div className="mb-8">\cb1 \
+\cb3               <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center sm:text-left">1. Ingresos Mensuales</h2>\cb1 \
+\cb3               <div className="bg-white rounded-xl shadow-inner p-4 border border-gray-200">\cb1 \
+\cb3                 <InputField label="Salario/Sueldo" name="salario" value=\{ingresos.salario\} onChange=\{handleIngresosChange\} />\cb1 \
+\cb3                 <InputField label="Ingresos extra (trabajo freelance, etc.)" name="ingresosExtra" value=\{ingresos.ingresosExtra\} onChange=\{handleIngresosChange\} />\cb1 \
+\cb3                 <InputField label="Ingresos por inversiones" name="inversiones" value=\{ingresos.inversiones\} onChange=\{handleIngresosChange\} />\cb1 \
+\cb3                 <div className="flex justify-between items-center mt-4 pt-4 border-t-2 border-gray-300">\cb1 \
+\cb3                   <span className="text-xl font-bold text-gray-800">TOTAL DE INGRESOS</span>\cb1 \
+\cb3                   <span className="text-xl font-bold text-blue-600">$\{totalIngresos.toFixed(2)\}</span>\cb1 \
+\cb3                 </div>\cb1 \
+\cb3               </div>\cb1 \
+\cb3             </div>\cb1 \
+\
+\cb3             \{/* Secci\'f3n de Gastos */\}\cb1 \
+\cb3             <div className="mb-8">\cb1 \
+\cb3               <h2 className="text-2xl font-bold text-gray-900 mb-4 text-center sm:text-left">2. Gastos Mensuales</h2>\cb1 \
+\cb3               <div className="bg-white rounded-xl shadow-inner p-4 border border-gray-200">\cb1 \
+\cb3                 <SectionTitle title="Necesidades (50%)" />\cb1 \
+\cb3                 <InputField label="Alquiler/Hipoteca" name="alquiler" value=\{gastos.alquiler\} onChange=\{handleGastosChange\} />\cb1 \
+\cb3                 <InputField label="Servicios (luz, agua, gas, internet)" name="servicios" value=\{gastos.servicios\} onChange=\{handleGastosChange\} />\cb1 \
+\cb3                 <InputField label="Comida/Supermercado" name="comida" value=\{gastos.comida\} onChange=\{handleGastosChange\} />\cb1 \
+\cb3                 <InputField label="Transporte" name="transporte" value=\{gastos.transporte\} onChange=\{handleGastosChange\} />\cb1 \
+\cb3                 <InputField label="Seguros (m\'e9dico, auto, hogar)" name="seguros" value=\{gastos.seguros\} onChange=\{handleGastosChange\} />\cb1 \
+\cb3                 <InputField label="Deudas (m\'ednimos de tarjetas, pr\'e9stamos)" name="deudas" value=\{gastos.deudas\} onChange=\{handleGastosChange\} />\cb1 \
+\
+\cb3                 <SectionTitle title="Deseos (30%)" />\cb1 \
+\cb3                 <InputField label="Salidas/Restaurantes" name="salidas" value=\{gastos.salidas\} onChange=\{handleGastosChange\} />\cb1 \
+\cb3                 <InputField label="Hobbies/Clases" name="hobbies" value=\{gastos.hobbies\} onChange=\{handleGastosChange\} />\cb1 \
+\cb3                 <InputField label="Entretenimiento (streaming, cine, conciertos)" name="entretenimiento" value=\{gastos.entretenimiento\} onChange=\{handleGastosChange\} />\cb1 \
+\cb3                 <InputField label="Compras en l\'ednea (ropa, gadgets)" name="comprasOnline" value=\{gastos.comprasOnline\} onChange=\{handleGastosChange\} />\cb1 \
+\
+\cb3                 <SectionTitle title="Ahorros e Inversiones (20%)" />\cb1 \
+\cb3                 <InputField label="Ahorro para Fondo de Emergencia" name="ahorroEmergencia" value=\{gastos.ahorroEmergencia\} onChange=\{handleGastosChange\} />\cb1 \
+\cb3                 <InputField label="Aportes a inversiones" name="aportesInversiones" value=\{gastos.aportesInversiones\} onChange=\{handleGastosChange\} />\cb1 \
+\cb3                 <InputField label="Otros ahorros" name="otrosAhorros" value=\{gastos.otrosAhorros\} onChange=\{handleGastosChange\} />\cb1 \
+\
+\cb3                 <div className="flex justify-between items-center mt-4 pt-4 border-t-2 border-gray-300">\cb1 \
+\cb3                   <span className="text-xl font-bold text-gray-800">TOTAL DE GASTOS</span>\cb1 \
+\cb3                   <span className="text-xl font-bold text-red-600">$\{totalGastos.toFixed(2)\}</span>\cb1 \
+\cb3                 </div>\cb1 \
+\cb3               </div>\cb1 \
+\cb3             </div>\cb1 \
+\
+\cb3             \{/* Secci\'f3n de Comparaci\'f3n Final */\}\cb1 \
+\cb3             <div className="mb-4 text-center">\cb1 \
+\cb3               <h2 className="text-2xl font-bold text-gray-900 mb-4">3. Comparaci\'f3n Final</h2>\cb1 \
+\cb3               <div className="bg-gray-200 rounded-xl p-6 shadow-inner">\cb1 \
+\cb3                 <div className="flex justify-between items-center text-lg font-medium text-gray-700">\cb1 \
+\cb3                   <span>Total de Ingresos:</span>\cb1 \
+\cb3                   <span className="text-blue-600 font-bold">$\{totalIngresos.toFixed(2)\}</span>\cb1 \
+\cb3                 </div>\cb1 \
+\cb3                 <div className="flex justify-between items-center text-lg font-medium text-gray-700 my-2">\cb1 \
+\cb3                   <span>Total de Gastos:</span>\cb1 \
+\cb3                   <span className="text-red-600 font-bold">$\{totalGastos.toFixed(2)\}</span>\cb1 \
+\cb3                 </div>\cb1 \
+\cb3                 <div className="flex justify-between items-center text-2xl mt-4 pt-4 border-t-2 border-gray-300">\cb1 \
+\cb3                   <span className="font-bold text-gray-800">Diferencia:</span>\cb1 \
+\cb3                   <span className=\{`font-bold $\{getDiferenciaClass()\}`\}>\{diferencia > 0 ? '' : ''\}$\{diferencia.toFixed(2)\}</span>\cb1 \
+\cb3                 </div>\cb1 \
+\cb3               </div>\cb1 \
+\cb3             </div>\cb1 \
+\cb3           </div>\cb1 \
+\cb3         </div>\cb1 \
+\cb3       );\cb1 \
+\cb3     \};\cb1 \
+\
+\cb3     const root = ReactDOM.createRoot(document.getElementById('root'));\cb1 \
+\cb3     root.render(<App />);\cb1 \
+\cb3   \cf6 \strokec6 </\cf2 \strokec2 script\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\pard\pardeftab720\partightenfactor0
+\cf6 \cb3 \strokec6 </\cf2 \strokec2 body\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\cf6 \cb3 \strokec6 </\cf2 \strokec2 html\cf6 \strokec6 >\cf5 \cb1 \strokec5 \
+\
+}
